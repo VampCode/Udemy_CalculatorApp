@@ -23,6 +23,9 @@ namespace Udemy_CalculatorApp
         public MainWindow()
         {
             InitializeComponent();
+
+            //Testing accessing and modifying the label
+            resultLabel.Content = "123";
         }
     }
 }

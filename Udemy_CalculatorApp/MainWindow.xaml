@@ -21,7 +21,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Content="0"
+        <Label x:Name="resultLabel"
+               Content="0"
                Grid.ColumnSpan="4"
                HorizontalAlignment="Right"
                VerticalAlignment="Bottom"

@@ -88,20 +88,54 @@ namespace Udemy_CalculatorApp
             resultLabel.Content = "0";
         }
 
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
+        {
+            // saving the last number so we could do an operation on it
+            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            {
+                //resetting the label so the user can start typing the next number
+                resultLabel.Content = "0";
+            }
+        }
+
         /// <summary>
         /// Click Event Handler for the Seven Button on the Calculator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void sevenButton_Click(object sender, RoutedEventArgs e)
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
-            if(resultLabel.Content.ToString() == "0")
+            //need to evaluate what button has been presswed
+            int selectedValue = 0;
+
+            if(sender == zeroButton)
+                selectedValue = 0;
+            if (sender == oneButton)
+                selectedValue = 1;
+            if (sender == twoButton)
+                selectedValue = 2;
+            if (sender == threeButton)
+                selectedValue = 3;
+            if (sender == fourButton)
+                selectedValue = 4;
+            if (sender == fiveButton)
+                selectedValue = 5;
+            if (sender == sixButton)
+                selectedValue = 6;
+            if (sender == sevenButton)
+                selectedValue = 7;
+            if (sender == eightButton)
+                selectedValue = 8;
+            if (sender == nineButton)
+                selectedValue = 9;
+
+            if (resultLabel.Content.ToString() == "0")
             {
-                resultLabel.Content = "7";
+                resultLabel.Content = $"{selectedValue}";
             }
             else
             {
-                resultLabel.Content = $"{resultLabel.Content}7";
+                resultLabel.Content = $"{resultLabel.Content}{selectedValue}";
             }
         }
     }
